@@ -297,11 +297,11 @@ export const getStaticProps: GetStaticProps = async () => {
 
     const [resultAll, resultMonth, resultWeek, resultDay, resultSeason] =
         await Promise.all([
-            db.collection('real_time_comics').findOne({ type: 'all' }),
-            db.collection('real_time_comics').findOne({ type: 'month' }),
-            db.collection('real_time_comics').findOne({ type: 'week' }),
-            db.collection('real_time_comics').findOne({ type: 'day' }),
-            db.collection('real_time_comics').findOne({ type: 'season' }),
+            { comics: [] },
+            { comics: [] },
+            { comics: [] },
+            { comics: [] },
+            { comics: [] },
         ]);
 
     const { comics: topAllManga } = resultAll;
